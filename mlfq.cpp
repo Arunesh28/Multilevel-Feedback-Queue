@@ -168,7 +168,6 @@ int tt_next_arrival(int priority)
 }
 void check_if_end()
 {
-    // cout<<"we are checking if its the end"<<endl;
     if(PROCESS_POOL.size() == 0)
     {
         EXIT_FLAG = true;
@@ -177,7 +176,6 @@ void check_if_end()
     {
         //idle time
         int idle_time = PROCESS_POOL[0].arrival_time - GLOBAL_TIME;
-        // cout<<"CPU idle time for "<<idle_time<<endl;
         GLOBAL_TIME = PROCESS_POOL[0].arrival_time;
         cout<<"<idle>"<<GLOBAL_TIME;
         insert_new_processes();
@@ -272,10 +270,6 @@ void schedule_from_Q2()
     while(1)
     {
         sort(Q2.begin(),Q2.end(),compare_burst_time);
-        // cout<<"hi2 ";
-        // for (auto i : Q2)
-        // cout<<i.id<<" ";
-        // cout<<endl;
         if (Q2.size() == 0)
         {
             break;
@@ -308,10 +302,6 @@ void schedule_from_Q1()
     int scheduled_time; 
     while(1)
     {
-        // cout<<"hi1 ";
-        // for (auto i : Q1)
-        // cout<<i.id<<" ";
-        // cout<<endl;
         if (Q1.size() == 0)
         {
             break;
